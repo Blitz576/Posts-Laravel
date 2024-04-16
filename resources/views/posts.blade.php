@@ -60,14 +60,22 @@
 <div class="container">
     <h1>Posts</h1>
     @foreach($posts as $post)
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ $post['title'] }}</h5>
-                <p class="card-text">{{ $post['post'] }}</p>
-                <p class="card-text text-muted">Published by {{ $post['publisher'] }}</p>
+        <div class="post">
+            <h2>{{ $post['title'] }}</h2>
+            <p>{{ $post['post'] }}</p>
+            <p>Published by: {{ $post['publisher'] }}</p>
+            <div class="buttons">
+                <a href="/posts/{{$post['id']}}" class="btn btn-primary">Show</a>
+                <a href="/posts/{{$post['id']}}/edit" class="btn btn-success">Edit</a>
+                <form action="/posts/{{$post['id']}}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </div>
         </div>
     @endforeach
+
 </div>
 </body>
 </html>

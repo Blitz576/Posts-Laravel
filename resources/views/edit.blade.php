@@ -47,8 +47,9 @@
 <body>
 <div class="container">
     <h2>Edit Post</h2>
-    <form action="/posts/" method="POST">
+    <form action="/posts/{{$post['id']}}/edit" method="POST">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="id">ID:</label>
             <input type="text" class="form-control" id="id" name="id" value="{{ $post['id'] }}" readonly>
