@@ -64,7 +64,7 @@
         </div>
         <div class="form-group">
             <label for="publisher">Publisher:</label>
-            <input type="text" class="form-control" id="publisher" name="publisher" value="{{ $post['publisher'] }}" required>
+            <input type="text" class="form-control" id="publisher" name="user_id" value="{{ $post->user->id }}" required>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>

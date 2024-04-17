@@ -26,7 +26,7 @@
         </div>
         <div class="card-body">
             <p>{{ $post['post'] }}</p>
-            <p><strong>Publisher:</strong> {{ $post['publisher'] }}</p>
+            <p><strong>Publisher:</strong> {{ $post->user->name }}</p>
         </div>
         <div class="card-footer">
             <a href="/" class="btn btn-primary">Back to Home</a>
