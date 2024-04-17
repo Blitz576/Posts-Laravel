@@ -24,50 +24,53 @@ Route::get('/',function(){
 });
 
 
-
-//Posts Route
-Route::get('/posts',
-   [PostController::class,'index']
-);
-
-
-// Get Post
-Route::get('/posts/{id}',
-// Action
-[PostController::class,'show']
-
-)->where('id', '[0-9]+');
-
-
-
-// Create A post
-Route::get('posts/create',
-[PostController::class,'create']
-);
-
-// Store
-Route::post('posts/',
-[PostController::class,'store']
-);
+//
+////Posts Route
+//Route::get('/posts',
+//   [PostController::class,'index']
+//);
+//
+//
+//// Get Post
+//Route::get('/posts/{id}',
+//// Action
+//[PostController::class,'show']
+//
+//)->where('id', '[0-9]+');
 
 
-// Edit
-Route::get('/posts/{id}/edit',
-    [PostController::class,'edit']
-)->where('id', '[0-9]+');
+//
+//// Create A post
+//Route::get('posts/create',
+//[PostController::class,'create']
+//);
+//
+//// Store
+//Route::post('posts/',
+//[PostController::class,'store']
+//);
+//
+//
+//// Edit
+//Route::get('/posts/{id}/edit',
+//    [PostController::class,'edit']
+//)->where('id', '[0-9]+');
+//
+//
+//// Update
+//Route::put('/posts/{id}/edit',
+//    [PostController::class,'edit']
+//)->where('id', '[0-9]+');
+//
+//Route::put('/posts/{id}/edit',
+//[PostController::class,'update']
+//)->where('id', '[0-9]+');
+//
+//
+//# Delete
+//Route::delete('/posts/{id}',
+//[PostController::class,'delete']
+//)->where('id', '[0-9]+');
 
-
-// Update
-Route::put('/posts/{id}/edit',
-    [PostController::class,'edit']
-)->where('id', '[0-9]+');
-
-Route::put('/posts/{id}/edit',
-[PostController::class,'update']
-)->where('id', '[0-9]+');
-
-
-# Delete
-Route::delete('/posts/{id}',
-[PostController::class,'delete']
-)->where('id', '[0-9]+');
+// final route
+Route::resource('posts',PostController::class);
