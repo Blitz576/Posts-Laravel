@@ -58,8 +58,8 @@
             <textarea class="form-control" id="post" name="post" rows="5" required></textarea>
         </div>
         <div class="form-group">
-            <label for="publisher">Publisher:</label>
-            <input type="text" class="form-control" id="publisher" name="publisher" required>
+            <label for="user_id">Publisher:</label>
+            <input type="text" class="form-control" id="user_id" name="user_id" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('post');
-            $table->string('publisher');
+            $table->unsignedBigInteger('user_id')->nullable(); // Define user_id column
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('posts');
     }
 };
